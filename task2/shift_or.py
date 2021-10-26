@@ -26,6 +26,6 @@ def bit_shift(old_mask):
 
 def bit_or(mask1, mask2):
     return [a|b for a,b in zip(mask1,mask2)]
-
+#for shift-and
 def bit_and(mask1, mask2):
     return [a*b for a,b in zip(mask1,mask2)]
