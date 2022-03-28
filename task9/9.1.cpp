@@ -6,10 +6,10 @@ using namespace std;
 class Node
 {
 public:
-	string Name; //èìÿ âåðøèíû
-	int Id; //íîìåð âåðøèíû
-	int Data; //äàííûå 
-	Node** Neighbours; //ñîñåäíèå(ñìåæíûå) âåðøèíû
+	string Name; //имя вершины
+	int Id; //номер вершины
+	int Data; //данные 
+	Node** Neighbours; //соседние(смежные) вершины
 	int NeighboursCount;
 	int MaxNeighboursCount;
 
@@ -23,11 +23,11 @@ public:
 		this->MaxNeighboursCount = MaxNeighboursCount;
 	}
 
-	void AddNeighbor(Node* Neighbor, bool oriented = false) // äîáàâèòü ñìåæíóþ âåðøèíó
+	void AddNeighbor(Node* Neighbor, bool oriented = false) // добавить смежную вершину
 	{
 		if (NeighboursCount == MaxNeighboursCount)
 		{
-			cout << "Äëÿ âåðøèíû " << this->Name << " äîñòèãíóò ëèìèò ñîñåäåé" << endl;
+			cout << "Для вершины " << this->Name << " достигнут лимит соседей" << endl;
 		}
 		else
 		{
@@ -44,7 +44,7 @@ public:
 };
 
 
-bool IsSimple(int n) //ïðîâåðêà íà ïðîñòîòó
+bool IsSimple(int n) //проверка на простоту
 {
 	if (n < 2)
 		return false;
@@ -55,22 +55,22 @@ bool IsSimple(int n) //ïðîâåðêà íà ïðîñòîòó
 	return true;
 }
 
-bool IsPerfect(int n) //ïðîâåðêà íà ñîâåðøåííîñòü (ñóììà äåëèòåëåé ðàâíà ñàìîìó ÷èñëó)
+bool IsPerfect(int n) //проверка на совершенность (сумма делителей равна самому числу)
 {
 	int sum = 0;
 	for (int i = 1; i < n; i++)
-		//Ïðîâåðêà íà äåëèìîñòü áåç îñòàòêà
+		//Проверка на делимость без остатка
 		if (n % i == 0)
-			//Ïðèáàâëÿåì äåëèòåëü ê ñóììàå
+			//Прибавляем делитель к суммае
 			sum += i;
-	//Ïðîâåðêà íà ðàâåíñòâî ñóììû äåëèòåëåé è ïåðâîíà÷àëüíîãî ÷èñëà
+	//Проверка на равенство суммы делителей и первоначального числа
 	if (n == sum)
 		return true;
 	else
 		return false;
 }
 
-bool IsFriendly(int n1, int n2) //ïðîâåðêà íà äðóæåñòâåííîñòü (ñóììà äåëèòåëåé ïåðâîãî ÷èñëà ðàâíà âòîðîìó ÷èñëó è îáðàòíî)
+bool IsFriendly(int n1, int n2) //проверка на дружественность (сумма делителей первого числа равна второму числу и обратно)
 {
 	int sum1 = 0;
 	for (int i = 1; i < n1; i++)
@@ -108,7 +108,7 @@ void DataDepthSearch(Node* FirstNode, int* visited, int* DataArray, int &DataCou
 
 enum Color {white, grey, black};
 
-void FindCycle(Node* FirstNode, int* colors, bool& HaveCycle, Node* PrevNode = nullptr)
+void FindСycle(Node* FirstNode, int* colors, bool& HaveCycle, Node* PrevNode = nullptr)
 {
 	colors[FirstNode->Id] = grey;
 	for (int i = 0; i < FirstNode->NeighboursCount; i++)
@@ -116,7 +116,7 @@ void FindCycle(Node* FirstNode, int* colors, bool& HaveCycle, Node* PrevNode = n
 		Node* NextNode = FirstNode->Neighbours[i];
 		if (colors[NextNode->Id] == white)
 		{
-			FindCycle(NextNode, colors, HaveCycle, FirstNode);
+			FindСycle(NextNode, colors, HaveCycle, FirstNode);
 		}
 		else if(colors[NextNode->Id] == grey && NextNode != PrevNode)
 		{
@@ -180,15 +180,15 @@ int main()
 	v4->AddNeighbor(v5);
 
 	
-	cout << "1. Îáõîäû ãðàôîâ" << endl;
+	cout << "1. Обходы графов" << endl;
 	//4
 	
-	int* visited = new int[5]{0,0,0,0,0}; // ïîñåùåííûå âåðøèíû
-	int* DataArray = new int[5]; // ìàññèâ äëÿ õðàíåíèÿ ÷èñåë èç âåðøèí
+	int* visited = new int[5]{0,0,0,0,0}; // посещенные вершины
+	int* DataArray = new int[5]; // массив для хранения чисел из вершин
 	int DataCount = 0;
-	DataDepthSearch(v1, visited, DataArray, DataCount); //îáõîä â ãëóáèíó è ñáîð äàííûõ ñ ãðàôà â ìàññèâ DataArray
+	DataDepthSearch(v1, visited, DataArray, DataCount); //обход в глубину и сбор данных с графа в массив DataArray
 
-	//ïîäñ÷åò
+	//подсчет
 	int SIMPLE_COUNT = 0;
 	int PERFECT_COUNT = 0;
 	int FRIENDLY_COUNT = 0;
@@ -214,25 +214,25 @@ int main()
 		}
 	}
 
-	cout << "ïðîñòûõ ÷èñåë " << SIMPLE_COUNT << "\nñîâåðøåííûõ ÷èñåë " << PERFECT_COUNT << "\näðóæåñòâåííûõ ÷èñåë " << FRIENDLY_COUNT << endl;
+	cout << "простых чисел " << SIMPLE_COUNT << "\nсовершенных чисел " << PERFECT_COUNT << "\nдружественных чисел " << FRIENDLY_COUNT << endl;
 
 
-	cout << "2. Öåïè è öèêëû íåîðèåíòèðîâàííîãî ãðàôà." << endl;
+	cout << "2. Цепи и циклы неориентированного графа." << endl;
 	//2
-	//ãðàô èìåþùèé öèêë(êâàäðàò)
+	//граф имеющий цикл(квадрат)
 	bool HaveCycle = false;
 	visited = new int[5]{ 0,0,0,0,0 };
-	FindCycle(v1, visited, HaveCycle);
+	FindСycle(v1, visited, HaveCycle);
 	if (HaveCycle)
 	{
-		cout << "èìååò öèêë"<< endl;
+		cout << "имеет цикл"<< endl;
 	}
 	else
 	{
-		cout << "íå èìååò öèêë" << endl;
+		cout << "не имеет цикл" << endl;
 	}
 
-	//ãðàô íå èìåþùèé öèêë(ëîìàíàÿ)
+	//граф не имеющий цикл(ломаная)
 	Node* n1 = new Node("n1", 0, 0);
 	Node* n2 = new Node("n2", 1, 0);
 	Node* n3 = new Node("n3", 2, 0);
@@ -242,40 +242,40 @@ int main()
 
 	HaveCycle = false;
 	int* colors = new int[3]{ white, white, white };
-	FindCycle(n1, colors, HaveCycle);
+	FindСycle(n1, colors, HaveCycle);
 	if (HaveCycle)
 	{
-		cout << "èìååò öèêë" << endl;
+		cout << "имеет цикл" << endl;
 	}
 	else
 	{
-		cout << "íå èìååò öèêë" << endl;
+		cout << "не имеет цикл" << endl;
 	}
 
 
-	cout << "3. Ñâÿçíîñòü" << endl;
+	cout << "3. Связность" << endl;
 	//6
-	//ïðîâåðêà íà ñâÿçíîñòü îáõîäîì â ãëóáèíó
-	//ïðîâåðèì ïðåäûäóùèå 2 ãðàôà(íå îðèåíòèðîâàííûå)
+	//проверка на связность обходом в глубину
+	//проверим предыдущие 2 графа(не ориентированные)
 	if (IsConnectivity(v1, 5))
 	{
-		cout << "ãðàô ñâÿçíûé" << endl;
+		cout << "граф связный" << endl;
 	}
 	else
 	{
-		cout << "ãðàô íå ñâÿçíûé" << endl;
+		cout << "граф не связный" << endl;
 	}
 	
 	if (IsConnectivity(n1, 3))
 	{
-		cout << "ãðàô ñâÿçíûé" << endl;
+		cout << "граф связный" << endl;
 	}
 	else
 	{
-		cout << "ãðàô íå ñâÿçíûé" << endl;
+		cout << "граф не связный" << endl;
 	}
 
-	//ïðîâåðèì òðåòèé îðèåíòèðîâàííûé ãðàô
+	//проверим третий ориентированный граф
 
 	Node* m1 = new Node("m1", 0);
 	Node* m2 = new Node("m2", 1);
@@ -292,11 +292,11 @@ int main()
 
 	if (IsConnectivity(m1, 4))
 	{
-		cout << "ãðàô ñâÿçíûé" << endl;
+		cout << "граф связный" << endl;
 	}
 	else
 	{
-		cout << "ãðàô íå ñâÿçíûé" << endl;
+		cout << "граф не связный" << endl;
 	}
 
 }
