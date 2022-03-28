@@ -6,10 +6,10 @@ using namespace std;
 class Node
 {
 public:
-	string Name; //имя вершины
-	int Id; //номер вершины
-	int Data; //данные 
-	Node** Neighbours; //соседние(смежные) вершины
+	string Name; //ГЁГ¬Гї ГўГҐГ°ГёГЁГ­Г»
+	int Id; //Г­Г®Г¬ГҐГ° ГўГҐГ°ГёГЁГ­Г»
+	int Data; //Г¤Г Г­Г­Г»ГҐ 
+	Node** Neighbours; //Г±Г®Г±ГҐГ¤Г­ГЁГҐ(Г±Г¬ГҐГ¦Г­Г»ГҐ) ГўГҐГ°ГёГЁГ­Г»
 	int NeighboursCount;
 	int MaxNeighboursCount;
 
@@ -23,11 +23,11 @@ public:
 		this->MaxNeighboursCount = MaxNeighboursCount;
 	}
 
-	void AddNeighbor(Node* Neighbor, bool oriented = false) // добавить смежную вершину
+	void AddNeighbor(Node* Neighbor, bool oriented = false) // Г¤Г®ГЎГ ГўГЁГІГј Г±Г¬ГҐГ¦Г­ГіГѕ ГўГҐГ°ГёГЁГ­Гі
 	{
 		if (NeighboursCount == MaxNeighboursCount)
 		{
-			cout << "Для вершины " << this->Name << " достигнут лимит соседей" << endl;
+			cout << "Г„Г«Гї ГўГҐГ°ГёГЁГ­Г» " << this->Name << " Г¤Г®Г±ГІГЁГЈГ­ГіГІ Г«ГЁГ¬ГЁГІ Г±Г®Г±ГҐГ¤ГҐГ©" << endl;
 		}
 		else
 		{
@@ -44,7 +44,7 @@ public:
 };
 
 
-bool IsSimple(int n) //проверка на простоту
+bool IsSimple(int n) //ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  ГЇГ°Г®Г±ГІГ®ГІГі
 {
 	if (n < 2)
 		return false;
@@ -55,22 +55,22 @@ bool IsSimple(int n) //проверка на простоту
 	return true;
 }
 
-bool IsPerfect(int n) //проверка на совершенность (сумма делителей равна самому числу)
+bool IsPerfect(int n) //ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  Г±Г®ГўГҐГ°ГёГҐГ­Г­Г®Г±ГІГј (Г±ГіГ¬Г¬Г  Г¤ГҐГ«ГЁГІГҐГ«ГҐГ© Г°Г ГўГ­Г  Г±Г Г¬Г®Г¬Гі Г·ГЁГ±Г«Гі)
 {
 	int sum = 0;
 	for (int i = 1; i < n; i++)
-		//Проверка на делимость без остатка
+		//ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  Г¤ГҐГ«ГЁГ¬Г®Г±ГІГј ГЎГҐГ§ Г®Г±ГІГ ГІГЄГ 
 		if (n % i == 0)
-			//Прибавляем делитель к суммае
+			//ГЏГ°ГЁГЎГ ГўГ«ГїГҐГ¬ Г¤ГҐГ«ГЁГІГҐГ«Гј ГЄ Г±ГіГ¬Г¬Г ГҐ
 			sum += i;
-	//Проверка на равенство суммы делителей и первоначального числа
+	//ГЏГ°Г®ГўГҐГ°ГЄГ  Г­Г  Г°Г ГўГҐГ­Г±ГІГўГ® Г±ГіГ¬Г¬Г» Г¤ГҐГ«ГЁГІГҐГ«ГҐГ© ГЁ ГЇГҐГ°ГўГ®Г­Г Г·Г Г«ГјГ­Г®ГЈГ® Г·ГЁГ±Г«Г 
 	if (n == sum)
 		return true;
 	else
 		return false;
 }
 
-bool IsFriendly(int n1, int n2) //проверка на дружественность (сумма делителей первого числа равна второму числу и обратно)
+bool IsFriendly(int n1, int n2) //ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  Г¤Г°ГіГ¦ГҐГ±ГІГўГҐГ­Г­Г®Г±ГІГј (Г±ГіГ¬Г¬Г  Г¤ГҐГ«ГЁГІГҐГ«ГҐГ© ГЇГҐГ°ГўГ®ГЈГ® Г·ГЁГ±Г«Г  Г°Г ГўГ­Г  ГўГІГ®Г°Г®Г¬Гі Г·ГЁГ±Г«Гі ГЁ Г®ГЎГ°Г ГІГ­Г®)
 {
 	int sum1 = 0;
 	for (int i = 1; i < n1; i++)
@@ -108,7 +108,7 @@ void DataDepthSearch(Node* FirstNode, int* visited, int* DataArray, int &DataCou
 
 enum Color {white, grey, black};
 
-void FindСycle(Node* FirstNode, int* colors, bool& HaveCycle, Node* PrevNode = nullptr)
+void FindCycle(Node* FirstNode, int* colors, bool& HaveCycle, Node* PrevNode = nullptr)
 {
 	colors[FirstNode->Id] = grey;
 	for (int i = 0; i < FirstNode->NeighboursCount; i++)
@@ -116,7 +116,7 @@ void FindСycle(Node* FirstNode, int* colors, bool& HaveCycle, Node* PrevNode = n
 		Node* NextNode = FirstNode->Neighbours[i];
 		if (colors[NextNode->Id] == white)
 		{
-			FindСycle(NextNode, colors, HaveCycle, FirstNode);
+			FindCycle(NextNode, colors, HaveCycle, FirstNode);
 		}
 		else if(colors[NextNode->Id] == grey && NextNode != PrevNode)
 		{
@@ -180,15 +180,15 @@ int main()
 	v4->AddNeighbor(v5);
 
 	
-	cout << "1. Обходы графов" << endl;
+	cout << "1. ГЋГЎГµГ®Г¤Г» ГЈГ°Г ГґГ®Гў" << endl;
 	//4
 	
-	int* visited = new int[5]{0,0,0,0,0}; // посещенные вершины
-	int* DataArray = new int[5]; // массив для хранения чисел из вершин
+	int* visited = new int[5]{0,0,0,0,0}; // ГЇГ®Г±ГҐГ№ГҐГ­Г­Г»ГҐ ГўГҐГ°ГёГЁГ­Г»
+	int* DataArray = new int[5]; // Г¬Г Г±Г±ГЁГў Г¤Г«Гї ГµГ°Г Г­ГҐГ­ГЁГї Г·ГЁГ±ГҐГ« ГЁГ§ ГўГҐГ°ГёГЁГ­
 	int DataCount = 0;
-	DataDepthSearch(v1, visited, DataArray, DataCount); //обход в глубину и сбор данных с графа в массив DataArray
+	DataDepthSearch(v1, visited, DataArray, DataCount); //Г®ГЎГµГ®Г¤ Гў ГЈГ«ГіГЎГЁГ­Гі ГЁ Г±ГЎГ®Г° Г¤Г Г­Г­Г»Гµ Г± ГЈГ°Г ГґГ  Гў Г¬Г Г±Г±ГЁГў DataArray
 
-	//подсчет
+	//ГЇГ®Г¤Г±Г·ГҐГІ
 	int SIMPLE_COUNT = 0;
 	int PERFECT_COUNT = 0;
 	int FRIENDLY_COUNT = 0;
@@ -214,25 +214,25 @@ int main()
 		}
 	}
 
-	cout << "простых чисел " << SIMPLE_COUNT << "\nсовершенных чисел " << PERFECT_COUNT << "\nдружественных чисел " << FRIENDLY_COUNT << endl;
+	cout << "ГЇГ°Г®Г±ГІГ»Гµ Г·ГЁГ±ГҐГ« " << SIMPLE_COUNT << "\nГ±Г®ГўГҐГ°ГёГҐГ­Г­Г»Гµ Г·ГЁГ±ГҐГ« " << PERFECT_COUNT << "\nГ¤Г°ГіГ¦ГҐГ±ГІГўГҐГ­Г­Г»Гµ Г·ГЁГ±ГҐГ« " << FRIENDLY_COUNT << endl;
 
 
-	cout << "2. Цепи и циклы неориентированного графа." << endl;
+	cout << "2. Г–ГҐГЇГЁ ГЁ Г¶ГЁГЄГ«Г» Г­ГҐГ®Г°ГЁГҐГ­ГІГЁГ°Г®ГўГ Г­Г­Г®ГЈГ® ГЈГ°Г ГґГ ." << endl;
 	//2
-	//граф имеющий цикл(квадрат)
+	//ГЈГ°Г Гґ ГЁГ¬ГҐГѕГ№ГЁГ© Г¶ГЁГЄГ«(ГЄГўГ Г¤Г°Г ГІ)
 	bool HaveCycle = false;
 	visited = new int[5]{ 0,0,0,0,0 };
-	FindСycle(v1, visited, HaveCycle);
+	FindCycle(v1, visited, HaveCycle);
 	if (HaveCycle)
 	{
-		cout << "имеет цикл"<< endl;
+		cout << "ГЁГ¬ГҐГҐГІ Г¶ГЁГЄГ«"<< endl;
 	}
 	else
 	{
-		cout << "не имеет цикл" << endl;
+		cout << "Г­ГҐ ГЁГ¬ГҐГҐГІ Г¶ГЁГЄГ«" << endl;
 	}
 
-	//граф не имеющий цикл(ломаная)
+	//ГЈГ°Г Гґ Г­ГҐ ГЁГ¬ГҐГѕГ№ГЁГ© Г¶ГЁГЄГ«(Г«Г®Г¬Г Г­Г Гї)
 	Node* n1 = new Node("n1", 0, 0);
 	Node* n2 = new Node("n2", 1, 0);
 	Node* n3 = new Node("n3", 2, 0);
@@ -242,40 +242,40 @@ int main()
 
 	HaveCycle = false;
 	int* colors = new int[3]{ white, white, white };
-	FindСycle(n1, colors, HaveCycle);
+	FindCycle(n1, colors, HaveCycle);
 	if (HaveCycle)
 	{
-		cout << "имеет цикл" << endl;
+		cout << "ГЁГ¬ГҐГҐГІ Г¶ГЁГЄГ«" << endl;
 	}
 	else
 	{
-		cout << "не имеет цикл" << endl;
+		cout << "Г­ГҐ ГЁГ¬ГҐГҐГІ Г¶ГЁГЄГ«" << endl;
 	}
 
 
-	cout << "3. Связность" << endl;
+	cout << "3. Г‘ГўГїГ§Г­Г®Г±ГІГј" << endl;
 	//6
-	//проверка на связность обходом в глубину
-	//проверим предыдущие 2 графа(не ориентированные)
+	//ГЇГ°Г®ГўГҐГ°ГЄГ  Г­Г  Г±ГўГїГ§Г­Г®Г±ГІГј Г®ГЎГµГ®Г¤Г®Г¬ Гў ГЈГ«ГіГЎГЁГ­Гі
+	//ГЇГ°Г®ГўГҐГ°ГЁГ¬ ГЇГ°ГҐГ¤Г»Г¤ГіГ№ГЁГҐ 2 ГЈГ°Г ГґГ (Г­ГҐ Г®Г°ГЁГҐГ­ГІГЁГ°Г®ГўГ Г­Г­Г»ГҐ)
 	if (IsConnectivity(v1, 5))
 	{
-		cout << "граф связный" << endl;
+		cout << "ГЈГ°Г Гґ Г±ГўГїГ§Г­Г»Г©" << endl;
 	}
 	else
 	{
-		cout << "граф не связный" << endl;
+		cout << "ГЈГ°Г Гґ Г­ГҐ Г±ГўГїГ§Г­Г»Г©" << endl;
 	}
 	
 	if (IsConnectivity(n1, 3))
 	{
-		cout << "граф связный" << endl;
+		cout << "ГЈГ°Г Гґ Г±ГўГїГ§Г­Г»Г©" << endl;
 	}
 	else
 	{
-		cout << "граф не связный" << endl;
+		cout << "ГЈГ°Г Гґ Г­ГҐ Г±ГўГїГ§Г­Г»Г©" << endl;
 	}
 
-	//проверим третий ориентированный граф
+	//ГЇГ°Г®ГўГҐГ°ГЁГ¬ ГІГ°ГҐГІГЁГ© Г®Г°ГЁГҐГ­ГІГЁГ°Г®ГўГ Г­Г­Г»Г© ГЈГ°Г Гґ
 
 	Node* m1 = new Node("m1", 0);
 	Node* m2 = new Node("m2", 1);
@@ -292,11 +292,11 @@ int main()
 
 	if (IsConnectivity(m1, 4))
 	{
-		cout << "граф связный" << endl;
+		cout << "ГЈГ°Г Гґ Г±ГўГїГ§Г­Г»Г©" << endl;
 	}
 	else
 	{
-		cout << "граф не связный" << endl;
+		cout << "ГЈГ°Г Гґ Г­ГҐ Г±ГўГїГ§Г­Г»Г©" << endl;
 	}
 
 }
