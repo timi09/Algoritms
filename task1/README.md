@@ -77,8 +77,9 @@
   Временные затраты алгоритмов для разных множеств показаны в
 таблицах 1, 2, 3.
 
-Таблица 1 Упорядоченный массив
+Таблица 1
 
+Упорядоченный массив
 
 <table><tr><th colspan="1" rowspan="2" valign="top">Сортиров ка</td><th colspan="9" valign="top">Количество элементов в массиве</td></tr>
 <tr></td><td colspan="1" valign="top">5</td><td colspan="1" valign="top">10</td><td colspan="1" valign="top">15</td><td colspan="1" valign="top">20</td><td colspan="1" valign="top">25</td><td colspan="1" valign="top">30</td><td colspan="1" valign="top">35</td><td colspan="1" valign="top">40</td><td colspan="1" valign="top">45</td></tr>
@@ -89,26 +90,11 @@
 <tr><td colspan="1">Поразрядная</td><td colspan="1">71307</td><td colspan="1">18934</td><td colspan="1">25448</td><td colspan="1">29938</td><td colspan="1">37680</td><td colspan="1">43445</td><td colspan="1">84839</td><td colspan="1">67442</td><td colspan="1">60409</td></tr>
 </table>
 
-Быстрая (левый 30570 26161 28992 42316 11889 91607 189711 160753 15982
-ключ) ns ns ns ns 7 ns ns ns ns 1 ns
-
-Быстрая 35967 22267 24110 34894 84408 87906 135139 106850 15217
-(правый ключ) ns ns ns ns ns ns ns ns 4 ns
-
-Быстрая 18827 8619 11616 17853 28468 30329 62309 39323 46446
-(медиана трех ns ns ns ns ns ns ns ns ns
-как ключ)
-
-Поразрядная 71307 18934 25448 29938 37680 43445 84839 67442 60409
 
 
-
-
-<a name="br4"></a>ns ns ns ns ns ns ns ns ns
-
-Слияние 48152 13246 20076 27320 53164 43373 84770 57158 67853
-
-ns ns ns ns ns ns ns ns ns
+||ns|ns|ns|ns|ns|ns|ns|ns|ns|
+| :- | - | - | - | - | - | - | - | - | - |
+|Слияние|48152 ns|13246 ns|20076 ns|27320 ns|53164 ns|43373 ns|84770 ns|57158 ns|67853 ns|
 
 Таблица 2 Массив, упорядоченный в обратном порядке
 
