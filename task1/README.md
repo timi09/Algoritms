@@ -68,6 +68,8 @@
   Временные затраты алгоритмов для разных множеств показаны в
 таблицах 1, 2, 3.
 
+<br/>
+
 Таблица 1
 
 Упорядоченный массив
@@ -82,6 +84,7 @@
 <tr><td colspan="1">Слияние</td><td colspan="1">48152 ns</td><td colspan="1">13246 ns</td><td colspan="1">20076 ns</td><td colspan="1">27320 ns</td><td colspan="1">53164 ns</td><td colspan="1">43373 ns</td><td colspan="1">84770 ns</td><td colspan="1">57158 ns</td><td colspan="1">67853 ns</td></tr>
 </table>
 
+<br/>
 
 Таблица 2
 
@@ -97,6 +100,8 @@
 <tr><td colspan="1" valign="top">Слияние</td><td colspan="1">6658 ns</td><td colspan="1">18236 ns</td><td colspan="1">20246 ns</td><td colspan="1">47344 ns</td><td colspan="1">37137 ns</td><td colspan="1">42769 ns</td><td colspan="1">51624 ns</td><td colspan="1">60735 ns</td><td colspan="1">67486 ns</td></tr>
 </table>
 
+<br/>
+
 Таблица 3
 
 Неупорядоченный массив
@@ -110,6 +115,8 @@
 <tr><td colspan="1">Поразрядная</td><td colspan="1">6279</td><td colspan="1">8279</td><td colspan="1">15421</td><td colspan="1">20075</td><td colspan="1">26291</td><td colspan="1">30974</td><td colspan="1">56289</td><td colspan="1">51407</td><td colspan="1">44465</td></tr>
 <tr><td colspan="1">Слияние</td><td colspan="1">7777 ns</td><td colspan="1">22161 ns</td><td colspan="1">21598 ns</td><td colspan="1">29319 ns</td><td colspan="1">47197 ns</td><td colspan="1">73997 ns</td><td colspan="1">61522 ns</td><td colspan="1">65317 ns</td><td colspan="1">95390 ns</td></tr>
 </table>
+
+<br/>
 
 Общая оценка сложности алгоритмов показана в таблице 4.
 
