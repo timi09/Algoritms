@@ -106,47 +106,31 @@
 <tr><td colspan="1" valign="top">Слияние</td><td colspan="1">6658 ns</td><td colspan="1">18236 ns</td><td colspan="1">20246 ns</td><td colspan="1">47344 ns</td><td colspan="1">37137 ns</td><td colspan="1">42769 ns</td><td colspan="1">51624 ns</td><td colspan="1">60735 ns</td><td colspan="1">67486 ns</td></tr>
 </table>
 
-Таблица 3 Неупорядоченный массив
+Таблица 3
 
-||<p>Сортировк</p><p>а</p>||<p>Количество элементов в массиве</p><p>5 10 15 20 25 30 35 40 45</p>|
-| :- | :- | :- | :- |
-Быстрая 6511 10542 19574 22638 32305 35936 40661 57942 53907
-(средний ключ) ns ns ns ns ns ns ns ns ns
+Неупорядоченный массив
 
-Быстрая (левый 5517 8409 14745 17791 23382 31073 35468 45913 68154
-ключ) ns ns ns ns ns ns ns ns ns
+<table><tr><th colspan="1" rowspan="2" valign="top"><p>Сортировк</p><p>а</p></td><th colspan="9" valign="top">Количество элементов в массиве</td></tr>
+<tr></td><td colspan="1" valign="top">5</td><td colspan="1" valign="top">10</td><td colspan="1" valign="top">15</td><td colspan="1" valign="top">20</td><td colspan="1" valign="top">25</td><td colspan="1" valign="top">30</td><td colspan="1" valign="top">35</td><td colspan="1" valign="top">40</td><td colspan="1" valign="top">45</td></tr>
+<tr><td colspan="1">Быстрая (средний ключ)</td><td colspan="1">6511 ns</td><td colspan="1">10542 ns</td><td colspan="1">19574 ns</td><td colspan="1">22638 ns</td><td colspan="1">32305 ns</td><td colspan="1">35936 ns</td><td colspan="1">40661 ns</td><td colspan="1">57942 ns</td><td colspan="1">53907 ns</td></tr>
+<tr><td colspan="1">Быстрая (левый ключ)</td><td colspan="1">5517 ns</td><td colspan="1">8409 ns</td><td colspan="1">14745 ns</td><td colspan="1">17791 ns</td><td colspan="1">23382 ns</td><td colspan="1">31073 ns</td><td colspan="1">35468 ns</td><td colspan="1">45913 ns</td><td colspan="1">68154 ns</td></tr>
+<tr><td colspan="1">Быстрая (правый ключ)</td><td colspan="1">6279 ns</td><td colspan="1">8279 ns</td><td colspan="1">15421 ns</td><td colspan="1">20075 ns</td><td colspan="1">26291 ns</td><td colspan="1">30974 ns</td><td colspan="1">56289 ns</td><td colspan="1">51407 ns</td><td colspan="1">44465 ns</td></tr>
+<tr><td colspan="1">Быстрая (медиана трех как ключ)</td><td colspan="1">4463 ns</td><td colspan="1">9204 ns</td><td colspan="1">14658 ns</td><td colspan="1">19931 ns</td><td colspan="1">24764 ns</td><td colspan="1">32203 ns</td><td colspan="1">35249 ns</td><td colspan="1">42208 ns</td><td colspan="1">52112 ns</td></tr>
+<tr><td colspan="1">Поразрядная</td><td colspan="1">6279</td><td colspan="1">8279</td><td colspan="1">15421</td><td colspan="1">20075</td><td colspan="1">26291</td><td colspan="1">30974</td><td colspan="1">56289</td><td colspan="1">51407</td><td colspan="1">44465</td></tr>
+<tr><td colspan="1">Слияние</td><td colspan="1">7777 ns</td><td colspan="1">22161 ns</td><td colspan="1">21598 ns</td><td colspan="1">29319 ns</td><td colspan="1">47197 ns</td><td colspan="1">73997 ns</td><td colspan="1">61522 ns</td><td colspan="1">65317 ns</td><td colspan="1">95390 ns</td></tr>
+</table>
 
-Быстрая 6279 8279 15421 20075 26291 30974 56289 51407 44465
-
-
-
-
-<a name="br5"></a>(правый ключ) ns ns ns ns ns ns ns ns ns
-
-Быстрая 4463 9204 14658 19931 24764 32203 35249 42208 52112
-(медиана трех ns ns ns ns ns ns ns ns ns
-как ключ)
-
-Поразрядная 17217 22161 31378 39635 47197 71813 69491 82974 133008
-
-ns ns ns ns ns ns ns ns ns
-
-||<p>Слияние 7777</p><p>` `ns</p>||<p>22161</p><p>ns</p>||<p>21598</p><p>ns</p>||<p>29319</p><p>ns</p>||<p>47197</p><p>ns</p>||<p>73997</p><p>ns</p>||<p>61522</p><p>ns</p>||<p>65317</p><p>ns</p>||<p>95390</p><p>ns</p>|
-| :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- | :- |
 Общая оценка сложности алгоритмов показана в таблице 4.
 
 Таблица 4
 
-Сортировка Сложность
+<table><tr><th colspan="1" rowspan="2" valign="top">Сортировка</td><th colspan="3" valign="top">Сложность</td></tr>
+<tr></td><td colspan="1" valign="top">Данные упорядочены</td><td colspan="1" valign="top">Данные упорядочены в обратном порядке</td><td colspan="1" valign="top">Данные не упорядочены</td></tr>
+<tr><td colspan="1">Быстрая</td><td colspan="1">n * log n</td><td colspan="1">n * log n</td><td colspan="1">n * log n</td></tr>
+<tr><td colspan="1">Поразрядная</td><td colspan="1">n * k/d (*)</td><td colspan="1">n * k/d (*)</td><td colspan="1">n * k/d (*)</td></tr>
+<tr><td colspan="1">Слияние</td><td colspan="1">n * log n</td><td colspan="1">n * log n</td><td colspan="1">n * log n</td></tr>
+</table>
 
-||<p>Данные</p><p>упорядочены</p>||<p>Данные</p><p>упорядочены в</p><p>обратном</p><p>порядке</p>||<p>Данные не</p><p>упорядочены</p>|
-| :- | :- | :- | :- | :- | :- |
-Быстрая n \* log n n \* log n n \* log n
+\*k - количество разрядов в самом длинном ключе.
 
-Поразрядная n \* k/d (\*) n \* k/d (\*) n \* k/d (\*)
-
-Слияние n \* log n n \* log n n \* log n
-
-` `\*k - количество разрядов в самом длинном ключе.
- d - разрядность данных: количество возможных значений разряда
-ключа.
+d - разрядность данных: количество возможных значений разряда ключа.
