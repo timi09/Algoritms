@@ -79,10 +79,15 @@
 
 Таблица 1 Упорядоченный массив
 
-||<p>Сортировка</p>||<p>Количество элементов в массиве</p><p>5 10 15 20 25 30 35 40 45</p>|
-|<p>Быстрая (средний ключ)</p>| 31410ns | 13440ns | 10879ns |
-Быстрая 31410 13440 10879 16116 34361 24345 43373 34532 41043
- ns ns ns ns ns ns ns ns ns
+
+<table><tr><th colspan="1" rowspan="2" valign="top">Сортиров ка</td><th colspan="9" valign="top">Количество элементов в массиве</td></tr>
+<tr></td><td colspan="1" valign="top">5</td><td colspan="1" valign="top">10</td><td colspan="1" valign="top">15</td><td colspan="1" valign="top">20</td><td colspan="1" valign="top">25</td><td colspan="1" valign="top">30</td><td colspan="1" valign="top">35</td><td colspan="1" valign="top">40</td><td colspan="1" valign="top">45</td></tr>
+<tr><td colspan="1">Быстрая (средний ключ)</td><td colspan="1">31410 ns</td><td colspan="1">13440 ns</td><td colspan="1">10879 ns</td><td colspan="1">16116 ns</td><td colspan="1">34361 ns</td><td colspan="1">24345 ns</td><td colspan="1">43373 ns</td><td colspan="1">34532 ns</td><td colspan="1">41043 ns</td></tr>
+<tr><td colspan="1">Быстрая (левый ключ)</td><td colspan="1">30570 ns</td><td colspan="1">26161 ns</td><td colspan="1">28992 ns</td><td colspan="1">42316 ns</td><td colspan="1">11889 7 ns</td><td colspan="1">91607 ns</td><td colspan="1">189711 ns</td><td colspan="1">160753 ns</td><td colspan="1">15982 1 ns</td></tr>
+<tr><td colspan="1" valign="top">Быстрая (правый ключ)</td><td colspan="1" valign="top">35967 ns</td><td colspan="1" valign="top">22267 ns</td><td colspan="1" valign="top">24110 ns</td><td colspan="1" valign="top">34894 ns</td><td colspan="1" valign="top">84408 ns</td><td colspan="1" valign="top">87906 ns</td><td colspan="1" valign="top">135139 ns</td><td colspan="1" valign="top">106850 ns</td><td colspan="1" valign="top">15217 4 ns</td></tr>
+<tr><td colspan="1" valign="top">Быстрая (медиана трех как ключ)</td><td colspan="1" valign="top">18827 ns</td><td colspan="1" valign="top">8619 ns</td><td colspan="1" valign="top">11616 ns</td><td colspan="1" valign="top">17853 ns</td><td colspan="1" valign="top">28468 ns</td><td colspan="1" valign="top">30329 ns</td><td colspan="1" valign="top">62309 ns</td><td colspan="1" valign="top">39323 ns</td><td colspan="1" valign="top">46446 ns</td></tr>
+<tr><td colspan="1">Поразрядная</td><td colspan="1">71307</td><td colspan="1">18934</td><td colspan="1">25448</td><td colspan="1">29938</td><td colspan="1">37680</td><td colspan="1">43445</td><td colspan="1">84839</td><td colspan="1">67442</td><td colspan="1">60409</td></tr>
+</table>
 
 Быстрая (левый 30570 26161 28992 42316 11889 91607 189711 160753 15982
 ключ) ns ns ns ns 7 ns ns ns ns 1 ns
