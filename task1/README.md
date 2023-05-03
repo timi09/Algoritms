@@ -81,49 +81,30 @@
 
 Упорядоченный массив
 
-<table><tr><th colspan="1" rowspan="2" valign="top">Сортиров ка</td><th colspan="9" valign="top">Количество элементов в массиве</td></tr>
+<table><tr><th colspan="1" rowspan="2" valign="top">Сортировка</td><th colspan="9" valign="top">Количество элементов в массиве</td></tr>
 <tr></td><td colspan="1" valign="top">5</td><td colspan="1" valign="top">10</td><td colspan="1" valign="top">15</td><td colspan="1" valign="top">20</td><td colspan="1" valign="top">25</td><td colspan="1" valign="top">30</td><td colspan="1" valign="top">35</td><td colspan="1" valign="top">40</td><td colspan="1" valign="top">45</td></tr>
 <tr><td colspan="1">Быстрая (средний ключ)</td><td colspan="1">31410 ns</td><td colspan="1">13440 ns</td><td colspan="1">10879 ns</td><td colspan="1">16116 ns</td><td colspan="1">34361 ns</td><td colspan="1">24345 ns</td><td colspan="1">43373 ns</td><td colspan="1">34532 ns</td><td colspan="1">41043 ns</td></tr>
 <tr><td colspan="1">Быстрая (левый ключ)</td><td colspan="1">30570 ns</td><td colspan="1">26161 ns</td><td colspan="1">28992 ns</td><td colspan="1">42316 ns</td><td colspan="1">11889 7 ns</td><td colspan="1">91607 ns</td><td colspan="1">189711 ns</td><td colspan="1">160753 ns</td><td colspan="1">15982 1 ns</td></tr>
 <tr><td colspan="1" valign="top">Быстрая (правый ключ)</td><td colspan="1" valign="top">35967 ns</td><td colspan="1" valign="top">22267 ns</td><td colspan="1" valign="top">24110 ns</td><td colspan="1" valign="top">34894 ns</td><td colspan="1" valign="top">84408 ns</td><td colspan="1" valign="top">87906 ns</td><td colspan="1" valign="top">135139 ns</td><td colspan="1" valign="top">106850 ns</td><td colspan="1" valign="top">15217 4 ns</td></tr>
 <tr><td colspan="1" valign="top">Быстрая (медиана трех как ключ)</td><td colspan="1" valign="top">18827 ns</td><td colspan="1" valign="top">8619 ns</td><td colspan="1" valign="top">11616 ns</td><td colspan="1" valign="top">17853 ns</td><td colspan="1" valign="top">28468 ns</td><td colspan="1" valign="top">30329 ns</td><td colspan="1" valign="top">62309 ns</td><td colspan="1" valign="top">39323 ns</td><td colspan="1" valign="top">46446 ns</td></tr>
-<tr><td colspan="1">Поразрядная</td><td colspan="1">71307</td><td colspan="1">18934</td><td colspan="1">25448</td><td colspan="1">29938</td><td colspan="1">37680</td><td colspan="1">43445</td><td colspan="1">84839</td><td colspan="1">67442</td><td colspan="1">60409</td></tr>
+<tr><td colspan="1">Поразрядная</td><td colspan="1">71307 ns</td><td colspan="1">18934 ns</td><td colspan="1">25448 ns</td><td colspan="1">29938 ns</td><td colspan="1">37680 ns</td><td colspan="1">43445 ns</td><td colspan="1">84839 ns</td><td colspan="1">67442 ns</td><td colspan="1">60409 ns</td></tr>
+<tr><td colspan="1">Слияние</td><td colspan="1">48152 ns</td><td colspan="1">13246 ns</td><td colspan="1">20076 ns</td><td colspan="1">27320 ns</td><td colspan="1">53164 ns</td><td colspan="1">43373 ns</td><td colspan="1">84770 ns</td><td colspan="1">57158 ns</td><td colspan="1">67853 ns</td></tr>
 </table>
 
 
+Таблица 2
 
-||ns|ns|ns|ns|ns|ns|ns|ns|ns|
-| :- | - | - | - | - | - | - | - | - | - |
-|Слияние|48152 ns|13246 ns|20076 ns|27320 ns|53164 ns|43373 ns|84770 ns|57158 ns|67853 ns|
+Массив, упорядоченный в обратном порядке
 
-Таблица 2 Массив, упорядоченный в обратном порядке
-
-||<p>Сортиро</p><p>вка</p>||<p>Количество элементов в массиве</p><p>5 10 15 20 25 30 35 40 45</p>|
-| :- | :- | :- | :- |
-Быстрая 4463 10459 10615 16921 21546 24006 29938 35659 41275
-(средний ns ns ns ns ns ns ns ns ns
-ключ)
-
-Быстрая 4755 17257 24226 39314 57775 80218 100328 133385 145758
-(левый ns ns ns ns ns ns ns ns ns
-ключ)
-
-Быстрая 4924 19758 26320 45321 64200 90715 103786 145310 151811
-
-|<p>(правый</p><p>ключ)</p>||ns ns ns ns ns ns ns ns ns|
-| :- | :- | :- |
-Быстрая 3780 11590 11233 26006 24927 26930 32651 43155 46217 (медиана ns ns ns ns ns ns ns ns ns
-
-трех как
-ключ)
-
-Поразрядная 13292 28091 24923 55154 42081 53082 58516 66505 68971
-
-ns ns ns ns ns ns ns ns ns
-
-Слияние 6658 18236 20246 47344 37137 42769 51624 60735 67486
-
-ns ns ns ns ns ns ns ns ns
+<table><tr><th colspan="1" rowspan="2" valign="top"><p>Сортиро</p><p>вка</p></td><th colspan="9" valign="top">Количество элементов в массиве</td></tr>
+<tr></td><td colspan="1">5</td><td colspan="1">10</td><td colspan="1">15</td><td colspan="1">20</td><td colspan="1">25</td><td colspan="1">30</td><td colspan="1">35</td><td colspan="1">40</td><td colspan="1">45</td></tr>
+<tr><td colspan="1">Быстрая (средний ключ)</td><td colspan="1" valign="top">4463 ns</td><td colspan="1" valign="top">10459 ns</td><td colspan="1" valign="top">10615 ns</td><td colspan="1" valign="top">16921 ns</td><td colspan="1" valign="top">21546 ns</td><td colspan="1" valign="top">24006 ns</td><td colspan="1" valign="top">29938 ns</td><td colspan="1" valign="top">35659 ns</td><td colspan="1" valign="top">41275 ns</td></tr>
+<tr><td colspan="1">Быстрая (левый ключ)</td><td colspan="1" valign="top">4755 ns</td><td colspan="1" valign="top">17257 ns</td><td colspan="1" valign="top">24226 ns</td><td colspan="1" valign="top">39314 ns</td><td colspan="1" valign="top">57775 ns</td><td colspan="1" valign="top">80218 ns</td><td colspan="1" valign="top">100328 ns</td><td colspan="1" valign="top">133385 ns</td><td colspan="1" valign="top">145758 ns</td></tr>
+<tr><td colspan="1">Быстрая (правый ключ)</td><td colspan="1" valign="top">4924 ns</td><td colspan="1" valign="top">19758 ns</td><td colspan="1" valign="top">26320 ns</td><td colspan="1" valign="top">45321 ns</td><td colspan="1" valign="top">64200 ns</td><td colspan="1" valign="top">90715 ns</td><td colspan="1" valign="top">103786 ns</td><td colspan="1" valign="top">145310 ns</td><td colspan="1" valign="top">151811 ns</td></tr>
+<tr><td colspan="1">Быстрая (медиана трех как ключ)</td><td colspan="1" valign="top">3780 ns</td><td colspan="1" valign="top">11590 ns</td><td colspan="1" valign="top">11233 ns</td><td colspan="1" valign="top">26006 ns</td><td colspan="1" valign="top">24927 ns</td><td colspan="1" valign="top">26930 ns</td><td colspan="1" valign="top">32651 ns</td><td colspan="1" valign="top">43155 ns</td><td colspan="1" valign="top">46217 ns</td></tr>
+<tr><td colspan="1" valign="top">Поразрядная</td><td colspan="1">13292 ns</td><td colspan="1">28091 ns</td><td colspan="1">24923 ns</td><td colspan="1">55154 ns</td><td colspan="1">42081 ns</td><td colspan="1">53082 ns</td><td colspan="1">58516 ns</td><td colspan="1">66505 ns</td><td colspan="1">68971 ns</td></tr>
+<tr><td colspan="1" valign="top">Слияние</td><td colspan="1">6658 ns</td><td colspan="1">18236 ns</td><td colspan="1">20246 ns</td><td colspan="1">47344 ns</td><td colspan="1">37137 ns</td><td colspan="1">42769 ns</td><td colspan="1">51624 ns</td><td colspan="1">60735 ns</td><td colspan="1">67486 ns</td></tr>
+</table>
 
 Таблица 3 Неупорядоченный массив
 
