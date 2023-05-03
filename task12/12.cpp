@@ -12,7 +12,7 @@ int getMinStack(int* stack_weight, int stack_count)
 	for (int i = 0; i < stack_count; i++)
 	{
 		IterationCount++;
-		if (stack_weight[min_stack] > stack_weight[i])//Ì‡ıÓ‰ËÏ ÏËÌËÏ‡Î¸ÌÛ˛ ÍÛ˜Û
+		if (stack_weight[min_stack] > stack_weight[i])//–Ω–∞—Ö–æ–¥–∏–º –º–∏–Ω–∏–º–∞–ª—å–Ω—É—é –∫—É—á—É
 		{
 			min_stack = i;
 		}
@@ -26,19 +26,19 @@ int main()
 	setlocale(LC_ALL, "Russian");
 
 	int n, m;
-	cout << "¬‚Â‰ËÚÂ ÍÓÎË˜ÂÒÚ‚Ó Í‡ÏÌÂÈ N = ";
+	cout << "–í–≤–µ–¥–∏—Ç–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –∫–∞–º–Ω–µ–π N = ";
 	cin >> n;
 	int* stone_weight = new int[n];
 	int* stone_id = new int[n];
 
-	cout << "¬‚Â‰ËÚÂ ‚ÂÒ‡ ÒÓÓÚ‚ÂÚÒÚ‚Û˛˘ËÂ Í‡ÏÌˇÏ\n"; //¬ÂÒ‡ ‰ÓÎÊÌ˚ ·˚Ú¸ ‡ÒÔÓÎÓÊÂÌ˚ ÔÓ Û·˚‚‡ÌË˛ ÎË·Ó ÌÛÊÌÓ ÔËÏÂÌËÚ¸ ÒÓÚËÓ‚ÍÛ
+	cout << "–í–≤–µ–¥–∏—Ç–µ –≤–µ—Å–∞ —Å–æ–æ—Ç–≤–µ—Ç—Å—Ç–≤—É—é—â–∏–µ –∫–∞–º–Ω—è–º\n"; //–í–µ—Å–∞ –¥–æ–ª–∂–Ω—ã –±—ã—Ç—å —Ä–∞—Å–ø–æ–ª–æ–∂–µ–Ω—ã –ø–æ —É–±—ã–≤–∞–Ω–∏—é –ª–∏–±–æ –Ω—É–∂–Ω–æ –ø—Ä–∏–º–µ–Ω–∏—Ç—å —Å–æ—Ä—Ç–∏—Ä–æ–≤–∫—É
 	for (int i = 0; i < n; i++)
 	{
 		cin >> stone_weight[i];
 		stone_id[i] = 0;
 	}
 
-	cout << "\n¬‚Â‰ËÚÂ ÍÓÎË˜ÂÒÚ‚Ó ÍÛ˜ M = ";
+	cout << "\n–í–≤–µ–¥–∏—Ç–µ –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ –∫—É—á M = ";
 	cin >> m;
 	int* stack_weight = new int[m];
 	for (int i = 0; i < m; i++)
@@ -80,9 +80,9 @@ int main()
 		}
 	}
 
-	cout << "ÏËÌËÏ‡Î¸Ì˚È ‚ÂÒ Ò‡ÏÓÈ ÚˇÊÂÎÓÈ ÍÛ˜Ë = " << MaxSum << endl;
+	cout << "–º–∏–Ω–∏–º–∞–ª—å–Ω—ã–π –≤–µ—Å —Å–∞–º–æ–π —Ç—è–∂–µ–ª–æ–π –∫—É—á–∏ = " << MaxSum << endl;
 
-	cout << " ÓÎË˜ÂÒÚ‚Ó ËÚÂ‡ˆËÈ " << IterationCount << endl;
+	cout << "–ö–æ–ª–∏—á–µ—Å—Ç–≤–æ –∏—Ç–µ—Ä–∞—Ü–∏–π " << IterationCount << endl;
 
 	return 0;
 
