@@ -40,7 +40,7 @@ public:
         }
         else
         {
-            cout << "переполнение стека" << endl;
+            cout << "РїРµСЂРµРїРѕР»РЅРµРЅРёРµ СЃС‚РµРєР°" << endl;
         }
     }
 
@@ -58,7 +58,7 @@ public:
         }
         else
         {
-            cout << "опустошение стека" << endl;
+            cout << "РѕРїСѓСЃС‚РѕС€РµРЅРёРµ СЃС‚РµРєР°" << endl;
         }
         return value;
     }
@@ -140,7 +140,7 @@ int main()
     }
 
 
-    //2 подсчет
+    //2 РїРѕРґСЃС‡РµС‚
     Stack<int>* stack1 = new Stack<int>(1, 100);
     stack1->PushBack(3);
     stack1->PushBack(5);
@@ -177,7 +177,7 @@ int main()
         }
     }
    
-    cout << "количество простых чисел: " << SimpleNumsCount << endl;
+    cout << "РєРѕР»РёС‡РµСЃС‚РІРѕ РїСЂРѕСЃС‚С‹С… С‡РёСЃРµР»: " << SimpleNumsCount << endl;
 
     return 0;
 }
