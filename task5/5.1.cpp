@@ -40,7 +40,7 @@ public:
         }
         else
         {
-            cout << "переполнение очереди"<<endl;
+            cout << "РїРµСЂРµРїРѕР»РЅРµРЅРёРµ РѕС‡РµСЂРµРґРё"<<endl;
         }
     }
 
@@ -55,7 +55,7 @@ public:
         }
         else
         {
-            cout << "опустошение очереди" << endl;
+            cout << "РѕРїСѓСЃС‚РѕС€РµРЅРёРµ РѕС‡РµСЂРµРґРё" << endl;
         }
         return temp->Data;
     }
@@ -154,7 +154,7 @@ int main()
         Writer << WordsQueue->PopFront() + "\n";
     }
 
-    //предикаты 1
+    //РїСЂРµРґРёРєР°С‚С‹ 1
     Queue<int>* q3 = new Queue<int>(1, 5);
     q3->PushBack(3);
     q3->PushBack(5);
