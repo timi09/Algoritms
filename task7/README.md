@@ -10,4 +10,4 @@
 
 ![image](https://github.com/timi09/assets/blob/main/Algoritms/task7/1.png)
 
-![image](https://github.com/timi09/assets/blob/main/Algoritms/task7/1.png)
+![image](https://github.com/timi09/assets/blob/main/Algoritms/task7/2.png)
